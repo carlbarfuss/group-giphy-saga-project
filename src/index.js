@@ -13,11 +13,11 @@ function* watcherSaga(){
    yield takeEvery('FETCH_GIPHY', fetchGiphySaga)
 }
 
-function* fetchGiphySaga(){
+function* fetchGiphySaga(action){
    console.log('in fetchGiphySaga');
    try {
-      const response = yield axios.get('/api/search')
-      yield put ( { type: 'SET_GIPHY', payload: response.data } )
+      const response = yield axios.get(`/api/search/${action.payload}`)
+      yield put ( { type: 'SET_GIPHY', payload: response.data.data } )
    } catch (error) {
       console.log('get SEARCH request failed', error);
    }
