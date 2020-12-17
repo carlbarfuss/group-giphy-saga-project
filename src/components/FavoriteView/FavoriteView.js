@@ -6,7 +6,7 @@ class FavoriteView extends Component {
    render() {
       return (
          <div>
-          Welcome to  FavoriteView
+            Welcome to  FavoriteView
          </div>
       );
    }
