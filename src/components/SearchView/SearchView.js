@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-
+import InputField from '../InputField/InputField'
+import GifGallery from '../GifGallery/GifGallery'
 
 class SearchView extends Component {
 
    render() {
       return (
          <div>
-          Welcome to SearchView
+            <InputField />
+            <GifGallery />
          </div>
       );
    }
