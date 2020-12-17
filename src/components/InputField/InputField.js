@@ -31,7 +31,6 @@ class InputField extends Component {
                 <input value={this.state.searchParameter} onChange={(event) => this.handleChangeFor(event, 'searchParameter')}></input>
                 <button type="submit">Search for GIFS</button>
             </form>
-            {JSON.stringify(this.props.reduxState)}
          </div>
       );
    }
