@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
     });
 });
 router.put(`/api/category`, (req, res) => {
-  let queryText = `UPDATE "category" SET "id" = $1 WHERE "id" = $2`;
+  let queryText = `UPDATE "favorite" SET "category_id" = $1 WHERE "id" = $2`;
   pool
     .query(queryText, req.body)
     .then((result) => {
