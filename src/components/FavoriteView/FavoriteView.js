@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import './FavoriteView.css'
 
 class FavoriteView extends Component {
 
@@ -13,7 +14,6 @@ class FavoriteView extends Component {
   //TODO sequel langauge for database
   //MAP on the DOM
   handleChange = (event) => {
-     console.log('in handlechange', event.target.value);
      this.setState({
      category: event.target.value
      })
@@ -29,10 +29,9 @@ class FavoriteView extends Component {
 
   render() {
     return (
-      <div>
-        <p>Welcome to FavoriteView</p>
+       <div className="gif-gallery">
           {this.props.setFavReducer.map((gif) => (
-         <div key={gif.id}>
+         <div className="gif-gallery"key={gif.id}>
           <img  src={gif.url} alt={gif.alt_text} /> <br/>
          
          <label>Assign Category:</label> 
