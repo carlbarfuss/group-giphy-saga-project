@@ -5,8 +5,17 @@ const router = express.Router();
 
 // return all favorite images
 router.get('/', (req, res) => {
-  res.sendStatus(200);
-});
+  let queryText = 'SELECT * FROM favorite';
+  pool.query(queryText).then(result => {
+    // Sends back the results in an object
+    console.log(result.rows);
+    res.send(result.rows);
+  })
+    .catch(error => {
+      console.log('Error doing GET from DB');
+      res.sendStatus(500)
+    })
+})
 
 // add a new favorite 
 // TODO TEST HERE
