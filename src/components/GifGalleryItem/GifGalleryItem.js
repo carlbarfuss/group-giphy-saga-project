@@ -7,6 +7,11 @@ class GifGalleryItem extends Component {
 
     addFavorite = () => {
         console.log('in addFavorite', this.props.gif.title);
+        this.props.dispatch({type: 'ADD_FAV', payload: {
+            title: this.props.gif.title,
+            url: this.props.gif.images.fixed_height.url
+        }})
+
     }
 
    render() {
