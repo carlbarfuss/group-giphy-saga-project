@@ -19,7 +19,7 @@ function* watcherSaga() {
 function* setCategorySaga(action){
    console.log("in setCategorySaga");
    try {
-      const response = yield axios.put(`/api/favorite/${action.payload[1]}`, action.payload[0])
+      yield axios.put(`/api/favorite/${action.payload[1]}`, action.payload[0])
    } catch (error) {
       console.log("get SEARCH request failed", error) 
    }
