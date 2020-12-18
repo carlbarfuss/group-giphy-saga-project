@@ -18,7 +18,6 @@ class GifGalleryItem extends Component {
       return (
          <div className="gif-item">
              <img src={this.props.gif.images.fixed_height.url} alt={this.props.gif.title}/>
-             <br></br>
              <button onClick={this.addFavorite}>Favorite</button>
          </div>
       );
