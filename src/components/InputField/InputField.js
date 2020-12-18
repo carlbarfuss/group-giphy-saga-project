@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './InputField.css'
 
 
 class InputField extends Component {
@@ -25,7 +26,7 @@ class InputField extends Component {
 
    render() {
       return (
-         <div>
+         <div className="input-field">
             <h3>Search For a Gif!</h3>
             <form onSubmit={this.searchGifs}>
                 <input value={this.state.searchParameter} onChange={(event) => this.handleChangeFor(event, 'searchParameter')}></input>
