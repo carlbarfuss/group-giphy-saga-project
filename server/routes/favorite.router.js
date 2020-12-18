@@ -5,8 +5,15 @@ const router = express.Router();
 
 // return all favorite images
 router.get('/', (req, res) => {
-  res.sendStatus(200);
-});
+  axios.get(`/api/favorite`)
+    .then(response => {
+      res.send(response.data)
+    })
+    .catch(error => {
+      console.log('Error doing GET from DB');
+      res.sendStatus(500)
+    })
+})
 
 // add a new favorite 
 router.post('/', (req, res) => {
