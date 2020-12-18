@@ -12,8 +12,8 @@ class FavoriteView extends Component {
   render() {
     return (
       <div>
-        Welcome to FavoriteView
-        {JSON.stringify(this.props)}
+        <p>Welcome to FavoriteView</p>
+        {this.props.setFavReducer.map( (gif) => (<img src={gif.url} alt={gif.alt_text} />))}
       </div>
     );
   }
