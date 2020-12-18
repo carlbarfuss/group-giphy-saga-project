@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import SearchView from '../SearchView/SearchView.js'
 import FavoriteView from '../FavoriteView/FavoriteView'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Header from '../Header/Header'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -10,14 +11,7 @@ class App extends Component {
       <div>
         <Router>
           <div className="App">
-            <header className="App-header">
-              <nav>
-                <ul>
-                  <li><Link to="/">GIPHY SEARCH</Link></li>
-                  <li><Link to="/favorites">favorites</Link></li>
-                </ul>
-              </nav>
-            </header>
+            <Header />
 
             <div className="content-container">
               <Route exact path="/" component={SearchView} />
@@ -25,7 +19,6 @@ class App extends Component {
             </div>
           </div>
         </Router>
-        <h1>Giphy Search!</h1>
       </div>
     );
   }
