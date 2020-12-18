@@ -9,8 +9,19 @@ router.get('/', (req, res) => {
 });
 
 // add a new favorite 
+// TODO TEST HERE
 router.post('/', (req, res) => {
-  res.sendStatus(200);
+  const gifToAdd = req.body;
+  let sqlText = `INSERT INTO favorite (url, alt_text) VALUES ($1, $2)`
+  pool.query(sqlText, [gifToAdd.url, gifToAdd.title])
+  .then ((result) => {
+    console.log('added gif to the favorite table');
+    res.sendStatus(201);
+  })
+  .catch((error) => {
+    console.log('error adding gif to favorite table', error);
+    res.sendStatus(500);
+  })
 });
 
 // update given favorite with a category id
