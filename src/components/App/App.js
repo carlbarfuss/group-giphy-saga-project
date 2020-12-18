@@ -25,7 +25,6 @@ class App extends Component {
             </div>
           </div>
         </Router>
-        <h1>Giphy Search!</h1>
       </div>
     );
   }
