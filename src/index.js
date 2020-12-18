@@ -12,6 +12,7 @@ import App from "./components/App/App";
 function* watcherSaga() {
   yield takeEvery("FETCH_GIPHY", fetchGiphySaga);
   yield takeEvery("FETCH_FAV", fetchFavSaga);
+  yield takeEvery("ADD_FAV", addFavSaga);
 }
 
 function* fetchGiphySaga(action) {
@@ -21,6 +22,15 @@ function* fetchGiphySaga(action) {
     yield put({ type: "SET_GIPHY", payload: response.data.data });
   } catch (error) {
     console.log("get SEARCH request failed", error);
+  }
+}
+
+function* addFavSaga(action) {
+  console.log('in addFavSaga');
+  try {
+    yield axios.post('/api/favorite', action.payload);
+  } catch (err) {
+    console.log('error in POST addFavSaga', err);
   }
 }
 
